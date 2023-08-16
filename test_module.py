@@ -1,13 +1,27 @@
-import os
+class Bird:
+    def __init__(self, name, size):
+        self.name = name
+        self.size = size
+
+    def describe(self):
+        return f'Размер птицы {self.name} — {self.size}.'
 
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-dir_files = [filename.lower() for filename in os.listdir(BASE_DIR)]
+class Parrot(Bird):
 
-files_list = ['main.py', 'readme.md']
+    def __init__(self, name, size, color):
+        super().__init__(name)
+        super().__init__(size)
+        self.color = color
 
 
-def test_program():
-    for filename in files_list:
-        assert filename in dir_files, f'Файл `{filename}` не найден в корне репозитория'
+class Penguin(Bird):
 
+    def __init__(self, name, size, genus):
+        super().__init__(name)
+        super().__init__(size)
+        self.genus = genus
+
+
+kesha = Parrot('Ара', 'средний', 'красный')
+kowalski = Penguin('Королевский', 'большой', 'Aptenodytes')
